@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
     let city = req.body.city;
     let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
-    request(url, (err, respose, body) => {
+    request(url, (err, response, body) => {
         if (err){
             res.render('index', {weather: null, error: 'Error, please try again'})       
         } else {
